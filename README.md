@@ -35,8 +35,7 @@ Navigate to project directory
 Python run.py
 4) View Application
 navigate to localhost on browser
---------------------------------------
-----------------------
+
 Explanation: First, a separate
 environment from the local computer is
 created and activated. Then, navigate
