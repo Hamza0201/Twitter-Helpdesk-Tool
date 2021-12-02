@@ -1,0 +1,216 @@
+]{% extends "layout.html" %}
+{% block content %}
+<!-- ============================================================== -->
+<!-- wrapper  -->
+<!-- ============================================================== -->
+<script src={{cdn_js | safe}}></script>
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+            <!-- ============================================================== -->
+            <!-- pageheader  -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h2 class="pageheader-title">Trends & Analysis</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end pageheader  -->
+            <!-- ============================================================== -->
+            <div class="ecommerce-widget">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <span class="card-header">
+                                <h5 style="display: inline-block;">Live Sentiment</h5>
+                            </span>
+                            <div class="card-body" style="height: 314px">
+                                <div id="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <span class="card-header">
+                                <h5 style="display: inline-block;">Sentiment Today</h5>
+                            </span>
+                            <div class="card-body" style="height: 314px;">
+                                {{ div5 | safe }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <span class="card-header">
+                                <h5 style="display: inline-block;">Hashtag Sentiment Analysis</h5>
+                            </span>
+                            <div class="card-body" style="height: 326px;">
+                                {{ div6 | safe }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <span class="card-header">
+                                <div class="btn-group d-flex justify-content-between" id="n-gram-button">
+                                    <h5 style="display: inline-block;">N-Gram Sentiment and Frequency</h5>
+                                    <button type="button" id="ngrambutton" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">N = 1</button>
+                                    <div class="dropdown-menu">
+                                        <a href="#" class="dropdown-item">N = 1</a>
+                                        <a href="#" class="dropdown-item">N = 2</a>
+                                        <a href="#" class="dropdown-item">N = 3</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <div class="card-body" id="1-gram" style="height: 326px;">
+                                {{ div2 | safe }}
+                            </div>
+                            <div class="card-body" id="2-gram" style="height: 326px; display: none;">
+                                {{ div3 | safe }}
+                            </div>
+                            <div class="card-body" id="3-gram" style="height: 326px; display: none;">
+                                {{ div4 | safe }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <span class="card-header">
+                                <h5 style="display: inline-block;">Most Frequently Mentioned Organizations</h5>
+                            </span>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Organization</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in organization %}
+                                        <tr>
+                                            <td>{{ item[0] }}</td>
+                                            <td>{{ item[1] }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <span class="card-header">
+                                <h5 style="display: inline-block;">Most Frequently Mentioned Locations</h5>
+                            </span>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Location</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in location %}
+                                        <tr>
+                                            <td>{{ item[0] }}</td>
+                                            <td>{{ item[1] }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <span class="card-header">
+                                <h5 style="display: inline-block;">Most Frequently Mentioned Persons</h5>
+                            </span>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Person</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in person %}
+                                        <tr>
+                                            <td>{{ item[0] }}</td>
+                                            <td>{{ item[1] }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <span class="card-header">
+                                <div class="btn-group d-flex justify-content-between" id="visualisation-button">
+                                    <h5 style="display: inline-block;">LDA Topic Modelling of Tweets</h5>
+                                    <button type="button" id="ml" class="btn btn-dark">Visualisation</button>
+                                </div>
+                            </span>
+                            <div class="card-body">
+                                <h6>Topic 1</h6>
+                                <h6>{{ topics_dict[1] }}</h6>
+                                <hr data-content="AND">
+                                <h6>Topic 2</h6>
+                                <h6>{{ topics_dict[2] }}</h6>
+                                <hr data-content="AND">
+                                <h6>Topic 3</h6>
+                                <h6>{{ topics_dict[3] }}</h6>
+                                <hr data-content="AND">
+                                <h6>Topic 4</h6>
+                                <h6>{{ topics_dict[4] }}</h6>
+                                <hr data-content="AND">
+                                <h6>Topic 5</h6>
+                                <h6>{{ topics_dict[5] }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <span class="card-header">
+                                <h5 style="display: inline-block;">Most Liked Tweet Today</h5>
+                            </span>
+                            <div class="card-body">
+                                <blockquote class="twitter-tweet" data-cards="hidden"><a href={{ link_likes }}></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <span class="card-header">
+                                <h5 style="display: inline-block;">Most Retweeteed Tweet Today</h5>
+                            </span>
+                            <div class="card-body">
+                                <blockquote class="twitter-tweet" data-cards="hidden"><a href={{ link_retweets }}></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+{{ script2 | safe }}
+{{ script3 | safe }}
+{{ script4 | safe }}
+{{ script5 | safe }}
+{{ script6 | safe }}
+{% endblock content%}

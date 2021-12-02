@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- ============================================================== -->
+<!-- wrapper  -->
+<!-- ============================================================== -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+            <!-- ============================================================== -->
+            <!-- pageheader  -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                	<div class="card-figure">
+							<div class="jumbotron">
+							    <h1 class="display-4">Knowledge Base</h1>
+							    <div id="custom-search" class="top-search-bar">
+                                	<input class="form-control" id="search-kb" type="text" placeholder="What can we help you with today?">
+                            	</div>
+							</div>
+		            </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card" style="height: 240px;">
+                        <div class="card-body">
+                            <h6 class="text-dark" >Dashboard</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">The dashboard will update with the number of tickets with their corresponding status. This will be represented by the pie-chart for easy viewing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card" style="height: 240px;">
+                        <div class="card-body">
+                            <h6 class="text-dark">Tickets</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">In the tickets tab, new tickets will be added into the database in real-time and will be marked with a ticket status of 'open. This can then be update to processing and closed as the status of the ticket progresses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card" style="height: 240px;">
+                        <div class="card-body">
+                            <h6 class="text-dark">Ticket Status</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">The graph on the dashboard will illustrate the rate at which ticket status are changing and the results will be published every 5 minutes. This will include tickets that are open, processing and closed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card" style="height: 240px;">
+                        <div class="card-body">
+                            <h6 class="text-dark">Tickets Overdue</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">Tickets overdue on the dashboard tab refers to tickets that were opened more than 3 days ago and have yet to be processed or closed. These should have the highest priority when dealing with tickets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card" style="height: 240px;">
+                        <div class="card-body">
+                            <h6 class="text-dark">Tweet Frequency</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">The word-cloud will update on every refresh to visualise the most frequenly talked about works in todays' tickets. This is quantified in the graph besides it, labelled tweets word frequency.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body" style="height: 240px;">
+                            <h6 class="text-dark">Updates and Refresh</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">The geo-map on the dashboard will automatically update every 10 mins. This is due to the geo-mapping being resource intesive therefore only being invoked at intervals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card" style="height: 240px;">
+                        <div class="card-body">
+                            <h6 class="text-dark">Notes</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">Here, there will be space for users to make notes or reminders as they please so they can be read back at a later date. These will be stored in a central, secure database.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card" style="height: 240px;">
+                        <div class="card-body">
+                            <h6 class="text-dark">Trends and Analysis</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">Hashtag and N-gram Analysis will both update on refresh and will reprsent the sentiment associated with the corresponding word or hashtag.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card" style="height: 240px;">
+                        <div class="card-body">
+                            <h6 class="text-dark">Topic Modelling Visualisation</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">This will update every 2 minutes and will cluster tweets into topics where each cluster will represent similar words within tweets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card" style="height: 240px;">
+                        <div class="card-body">
+                            <h6 class="text-dark">Automatic Archival</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">At the end of the day, 11:59pm, all tickets marked with a ticket status of 'closed' will be deleted from the tickets database and added to an archve which can be accessed from the 'reports' tab.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card" style="height: 240px;">
+                        <div class="card-body">
+                            <h6 class="text-dark">Administrator</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">The Admin login at the top-right is reserved for administrators therefore unauthorised access using staff details will not be permitted.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card" style="height: 240px;">
+                        <div class="card-body">
+                            <h6 class="text-dark">Settings</h6>
+                            <div class="metric-value d-inline-block">
+                                <p class="mb-1" id="kb-text">Issues with accounts or more specific problems with the helpdesk can be reported here to the admin. Password changes can also be requested from here that will be sent to the email associated with the user.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end pageheader  -->
+            <!-- ============================================================== -->
+		</div>
+	</div>
+</div>
+{% endblock content%}
